@@ -92,6 +92,5 @@ while True:
     else:
         'input err2'
     if raw_input('exit:') == 'exit':
-        s.close()
+        s.close
         break
-
