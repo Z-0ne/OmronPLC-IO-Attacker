@@ -70,7 +70,7 @@ print 'start read device information.....'
 initconnect(s)
 while True:
     func = raw_input('Func(run/monitor/stop/reset/quit):')
-    iostate = raw_input('Set Forced State(on/off/quit):')
+    iostate = raw_input('Set Forced State(on/off/cancel/quit):')
     if func == 'run':
         run_plc_cpu(s)
     elif func == 'monitor':
@@ -87,6 +87,8 @@ while True:
         loop_forced_set(s,iostate)
     elif iostate == 'off':
         loop_forced_set(s,iostate)
+    elif iostate == 'cancel':
+        cancel_forced_set(s)
     elif iostate == 'quit':
         print 'input state'
     else:
